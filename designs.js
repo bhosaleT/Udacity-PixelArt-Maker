@@ -5,7 +5,7 @@ const pixelCanvas = document.getElementById('pixelCanvas');
 let inputHeight = $("#inputHeight");
 let inputWidth = $("#inputWidth");
 
-//Picking the color from the html input dom element.
+//Picking the color from the html color-input dom element.
 let pickedColor = $("#colorPicker");
 
 //Submit button event listener to trigger the makeGrid function.
