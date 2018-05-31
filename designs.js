@@ -21,19 +21,14 @@ function makeGrid() {
     let canvasHeight = inputHeight.val();
     let canvasWidth = inputWidth.val();
 
-    //A function which fills color in the cell that was clicked and changes the color.
-    let addColor = (block) => {
-        block.addEventListener('click', () => {
-            block.style.backgroundColor = pickedColor.val();
-        })
-    }
-
-    //An event listener such that whenever any cell is clicked it calls addEvent function and changes it's color.
+    //Adding an event listener to each block so that when clicked the color will be changed.
     for (let i = 0; i < canvasHeight; i++) {
         let row = pixelCanvas.insertRow(i);
         for (let j = 0; j < canvasWidth; j++) {
             let block = row.insertCell(j);
-            block.addEventListener('click', addColor(block));
+            block.addEventListener('click', ()=>{
+                block.style.backgroundColor = pickedColor.val();
+            });
 
         }
     }
