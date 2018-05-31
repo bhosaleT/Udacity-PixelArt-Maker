@@ -14,7 +14,7 @@ $('#inputSubmit').click(() => {
     makeGrid();
 });
 
-
+let isColored = false;
 //To make the grid pattern makegrid is called whenever button is clicked.
 function makeGrid() {
     pixelCanvas.innerHTML = '';
@@ -27,9 +27,15 @@ function makeGrid() {
         for (let j = 0; j < canvasWidth; j++) {
             let block = row.insertCell(j);
             block.addEventListener('click', ()=>{
+                if(!isColored){
                 block.style.backgroundColor = pickedColor.val();
+                isColored = true;
+                }
+                else{
+                    block.style.backgroundColor = 'white';
+                    isColored = false;
+                }
             });
-
         }
     }
 }
